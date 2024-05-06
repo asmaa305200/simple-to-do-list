@@ -1,0 +1,14 @@
+<h2 class="text-center mb-3">Add Your Tasks</h2>
+<div *ngIf="_TsaksService.task.length == 0" >
+  <p class="alert alert-danger text-center">your To Do List is Empty</p> 
+  <button class="btn btn-success mt-2 form-control" routerLink="/add-task">Add Task</button>
+</div>
+<div *ngIf="_TsaksService.task.length != 0" >
+  <ul class="list-group">
+    <li *ngFor="let item of _TsaksService.task ; index as i" class="list-group-item d-flex justify-content-between align-items-center">
+      <a [routerLink]="['/task-details',i]">{{item.title}}</a>  
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+    </li>
+  </ul>
+<button class="btn btn-success mt-2" routerLink="/add-task">Add Task</button>
+</div>

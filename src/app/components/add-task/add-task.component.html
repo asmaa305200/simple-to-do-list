@@ -1,0 +1,9 @@
+<div>
+    <input #title type="text" class="form-control mb-2" placeholder="add your task title">
+    <textarea #describtion cols="30" rows="3" class="form-control" placeholder="add your task details.."></textarea>
+     <p class="alert alert-danger d-none" #alert>your task is empety</p>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+    <button class="btn btn-success" (click)="addTask(title , describtion)">Add</button>
+    <a routerLink="/" class="btn btn-danger">Cancel</a>
+   </div> 
+</div>

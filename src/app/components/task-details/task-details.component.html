@@ -1,0 +1,12 @@
+<div *ngIf="!taskId">
+<p class="alert alert-danger">the task can't be found</p>
+</div>
+
+<div *ngIf="taskId">
+    <h2 class="text-center">Deails of {{taskDetails.title}}</h2>
+    <input class="form-control mb-3" [(ngModel)]=" taskDetails.title">
+    <input class="form-control mb-3" [(ngModel)]="taskDetails.description">
+    <button class="btn btn-info me-2" (click)="Cancel()">Cancel</button>
+    <button class="btn btn-success me-2" (click)="update()">Update</button>
+    <button class="btn btn-danger me-2" (click)="Delete()">Delete</button>
+</div>
